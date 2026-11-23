@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="./style.css" rel="stylesheet" />
+
+    <title>AR-Demo</title>
+</head>
+<body>
+    <div id="left">
+            <img src="./imgs/Gemini_Generated_Image_u9luolu9luolu9lu.png" alt="">
+        <h1 id="title"></h1>
+
+        <p id="heroText">
+
+            Una sperimentazione sull'integrazione tra editoria e realtà aumentata!<br><br>
+            Attraverso il riconoscimento delle copertine, il progetto attiva animazioni 
+            digitali sovrapposte alla superficie del libro,indagando nuove 
+            possibilità di interazione tra oggetto editoriale e contenuto multimediale.`
+
+        </p>
+
+    </div>
+
+    <div id="right">
+        <h1>Prova le Demo</h1>
+
+        <a href="./leLoroStrade/leLoroStrade.html">
+            <button>LE LORO STRADE</button>
+        </a>
+
+
+        <a href="./erotype/erotype.html">
+            <button>EROTYPE</button>
+        </a>
+
+    </div>
+
+<script>
+
+    
+
+    let mtyText= `Pagina Viva`
+
+    let heroText = document.getElementById("heroText")
+    heroText.style.display="none"
+
+    let title = document.getElementById("title")
+    function typeWriter(text, element) {
+    let i = 0;
+
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 50);
+        } else{
+            heroText.style.display="flex"
+        }
+        }
+        type();
+    }
+
+   typeWriter(mtyText,title)
+
+
+
+
+</script>
+
+
+</body>
+</html>

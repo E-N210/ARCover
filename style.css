@@ -1,0 +1,82 @@
+button{
+    border-radius: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:16px;
+    padding:16px;
+    border: solid 0px;
+    width: 100%;
+    font-weight: 900;
+    background-color: #701269;
+    color: rgb(255, 241, 196);
+    max-width: 800px;
+    min-width: 250px;
+    cursor: pointer;
+}
+
+p{    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:16px;
+    text-align: left;
+    color: #701269;
+    margin: 0;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 0;
+    max-width: 600px;
+
+    animation: fade 1s linear;
+}
+
+img{
+    max-width: 400px;
+    object-fit: contain;
+    padding-top: 50px;
+    animation: fade 2s ease-in;
+}
+
+@keyframes fade {
+    from{opacity: 0%;}
+    to{opacity: 100%;}
+}
+
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:50px;
+    color: #701269;
+    margin: 0;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 0;
+
+    animation: fade 1s linear;
+}
+
+body{
+    margin: 0;
+    background-color: rgb(255, 241, 196);
+    display: flex;
+    gap:10px;
+    flex-wrap: wrap
+}
+
+#left{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+#right{
+    display: none;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 5px;
+
+}
+
+#heroText{
+    min-height: 50px;
+    text-align: left;
+}

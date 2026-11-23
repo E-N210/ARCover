@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
+    <link href="../style.css" rel="stylesheet" />
+
+    <title>AR-Demo</title>
+</head>
+<body>
+
+     <a-scene mindar-image="imageTargetSrc: ./targets.mind;" xr-mode-ui="enabled: false" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+        <a-assets>
+            <img id="oldman" src="./oldman.png">
+        </a-assets>
+
+        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+      
+
+
+        <a-entity mindar-image-target="targetIndex: 0" id="main">
+
+
+        </a-entity>
+    
+    </a-scene>
+
+
+    <script>
+
+        const mainEntity = document.getElementById("main")
+        
+
+        const gif = document.createElement('a-entity')
+        gif.setAttribute('geometry', {
+            primitive: 'plane',
+            height: 0.7,
+            width: 1,
+        });
+
+        gif.setAttribute("position",{
+            x:0,
+            y:-0.08,
+            z:0
+        })
+
+        gif.setAttribute("material", {
+            src: "./ezgif.mp4",
+            transparent: true,
+            shader: "flat",
+            side: "double"
+        });
+
+        gif.addEventListener("materialtextureloaded", () => {
+            gif.setAttribute("visible", true);
+        }, { once: true });
+
+
+
+
+        const old = document.createElement('a-entity')
+        old.setAttribute('geometry', {
+            primitive: 'plane',
+            height: 1.2,
+            width: 1,
+        });
+
+        old.setAttribute("position",{
+            x:0,
+            y:0,
+            z:0.01
+        })
+
+        old.setAttribute("material", {
+            src: "./oldman1.png",
+            transparent: true,
+            shader: "flat",
+            side: "double"
+        });
+
+        old.addEventListener("materialtextureloaded", () => {
+            gif.setAttribute("visible", true);
+        }, { once: true });
+
+        mainEntity.appendChild(gif)
+        mainEntity.appendChild(old)
+
+
+    </script>
+    
+</body>
+</html>
