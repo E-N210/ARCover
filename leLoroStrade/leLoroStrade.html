@@ -15,9 +15,7 @@
 <body>
 
      <a-scene mindar-image="imageTargetSrc: ./targets.mind;" xr-mode-ui="enabled: false" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-        <a-assets>
-            <img id="oldman" src="./oldman.png">
-        </a-assets>
+
 
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
       
@@ -30,11 +28,21 @@
     
     </a-scene>
 
+    <div id="ui">
+        <h1>Inquadra la copertina</h1>
+
+        <img src="../imgs/leLoroStrade_Cover.png" alt="">
+
+        <h1>Scopri la Realtà Aumentata</h1>
+
+    </div>
+
 
     <script>
 
         const mainEntity = document.getElementById("main")
         
+        const ui = document.getElementById("ui")
 
         const gif = document.createElement('a-entity')
         gif.setAttribute('geometry', {
@@ -89,6 +97,15 @@
 
         mainEntity.appendChild(gif)
         mainEntity.appendChild(old)
+
+
+        mainEntity.addEventListener("targetFound", event => {  
+            ui.style.display="none"
+        })
+
+        mainEntity.addEventListener("targetLost", event => {  
+            ui.style.display="flex"
+        })
 
 
     </script>

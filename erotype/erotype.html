@@ -30,10 +30,22 @@
     
     </a-scene>
 
+    <div id="ui">
+        <h1>Inquadra la copertina</h1>
+
+        <img src="../imgs/erotype_Cover.png" alt="">
+
+        <h1>Scopri la Realtà Aumentata</h1>
+
+    </div>
+
+
 
     <script>
 
         const mainEntity = document.getElementById("main")
+
+        const ui = document.getElementById("ui")
         
 
         const gif = document.createElement('a-entity')
@@ -74,7 +86,7 @@
         type.setAttribute("position",{
             x:0,
             y:0.025,
-            z:0.1
+            z:0.001
         })
 
         type.setAttribute("material", {
@@ -89,6 +101,15 @@
         }, { once: true });
 
         mainEntity.appendChild(type)
+
+
+        mainEntity.addEventListener("targetFound", event => {  
+            ui.style.display="none"
+        })
+
+        mainEntity.addEventListener("targetLost", event => {  
+            ui.style.display="flex"
+        })
 
 
     </script>

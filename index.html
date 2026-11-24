@@ -25,7 +25,9 @@
     </div>
 
     <div id="right">
-        <h1>Prova le Demo</h1>
+        <iframe src="https://www.youtube.com/embed/YMMPx47IR7k?si=CP1ThISne3HQoZJt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h1 id="cta">
+        </h1>
 
         <a href="./leLoroStrade/leLoroStrade.html">
             <button>LE LORO STRADE</button>
@@ -43,11 +45,13 @@
     
 
     let mtyText= `Pagina Viva`
+    let mtyCTA = " Prova le Demo"
 
     let heroText = document.getElementById("heroText")
-    heroText.style.display="none"
 
     let title = document.getElementById("title")
+    let cta = document.getElementById("cta")
+
     function typeWriter(text, element) {
     let i = 0;
 
@@ -55,15 +59,17 @@
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
             i++;
-            setTimeout(type, 50);
-        } else{
-            heroText.style.display="flex"
-        }
+            setTimeout(type, 25);
+            } 
         }
         type();
     }
 
    typeWriter(mtyText,title)
+
+   typeWriter(mtyCTA,cta)
+
+
 
 
 
