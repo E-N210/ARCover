@@ -32,7 +32,7 @@ p{
 }
 
 img{
-    max-width: 360px;
+    max-width: 400px;
     object-fit: contain;
     padding-top: 50px;
     animation: fade 2s ease-in;
@@ -56,13 +56,54 @@ h1{
 
 }
 
-body{
+section{
     margin: 0;
     background-color: rgb(255, 241, 196);
     display: flex;
     gap:10px;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+body{
+
+    margin: 0;
+    background-color: rgb(255, 241, 196);
+}
+
+header{
+    margin-top: 20px; margin-bottom: 10px;
+    display: flex;    
+
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    gap:5px;
+
+    animation: fade 2s ease-in;
+}
+
+footer{    margin-top: 100px; margin-bottom: 30px;
+    flex-direction: column;
+    display: flex;    
+
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    gap:10px;
+
+    animation: fade 2s ease-in;
+
+}
+
+header p{
+    font-size: 20px;
+}
+
+header p i {
+    font-size: 24px;
 }
 
 #left{
@@ -77,7 +118,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    gap: 5px;
+    gap: 25px;
     align-items: stretch;
 
 }
@@ -94,8 +135,9 @@ body{
     z-index: 100;
     position: absolute;
     gap: 50px;
-    height: 100%;
+    height: 100%; width: 100%;
     justify-content: center;
+    top:0%
 }
 
 #ui h1{
@@ -107,7 +149,8 @@ body{
 #ui img{
     padding-top: 0px;
     opacity: 0.5;
-    max-width: 80vw;
+    width: 80vw;
+    max-width: 400px;
 }
 
 iframe{
@@ -120,4 +163,5 @@ iframe{
     border-radius: 20px;
     margin-top: 40px;
     margin-bottom: 0px;
+    animation: fade 2s ease-in;
 }
